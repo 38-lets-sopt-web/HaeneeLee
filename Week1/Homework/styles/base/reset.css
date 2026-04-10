@@ -1,0 +1,15 @@
+/* 전역 리셋 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+  background-color: #fdf8d7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
