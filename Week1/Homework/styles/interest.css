@@ -1,0 +1,112 @@
+#interests {
+  padding: 2rem;
+}
+
+.interests__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111111;
+}
+
+.interests__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 1100px) {
+  .interests__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .interests__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .interests__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.interests__card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.interests__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.interests__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.interests__body {
+  padding: 10px 12px 12px;
+}
+
+.interests__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.interests__btn-row {
+  display: flex;
+  gap: 6px;
+}
+
+.interests__btn {
+  flex: 1;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 15px;
+  background: transparent;
+  cursor: pointer;
+  color: #555555;
+}
+
+.interests__btn--like {
+  border: 2px solid #e1f5ee;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.interests__btn--dislike {
+  border: 2px solid #fcebeb;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.interests__btn--like:hover,
+.interests__btn--like.active {
+  background: #e1f5ee;
+  color: #0f6e56;
+  border-color: #5dcaa5;
+}
+
+.interests__btn--dislike:hover,
+.interests__btn--dislike.active {
+  background: #fcebeb;
+  color: #a32d2d;
+  border-color: #f09595;
+}
