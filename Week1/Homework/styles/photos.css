@@ -51,7 +51,6 @@
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
-  transition: border-color 0.3s ease;
 }
 
 .photos__image {

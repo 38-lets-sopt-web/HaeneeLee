@@ -11,30 +11,12 @@
 
 .interests__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 14px;
 }
 
-@media (max-width: 1100px) {
-  .interests__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 860px) {
-  .interests__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 580px) {
-  .interests__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .interests__card {
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -97,15 +79,13 @@
     border-color 0.2s ease;
 }
 
-.interests__btn--like:hover,
-.interests__btn--like.active {
+.interests__btn--like:hover {
   background: #e1f5ee;
   color: #0f6e56;
   border-color: #5dcaa5;
 }
 
-.interests__btn--dislike:hover,
-.interests__btn--dislike.active {
+.interests__btn--dislike:hover {
   background: #fcebeb;
   color: #a32d2d;
   border-color: #f09595;

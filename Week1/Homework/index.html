@@ -19,7 +19,7 @@
       </div>
 
       <div class="header__info">
-        <p class="header__name">핸이의 블로그</p>
+        <h1 class="header__name">핸이의 블로그</h1>
         <p class="header__title">Frontend Developer · SOPT 38기 웹파트</p>
       </div>
 
@@ -28,6 +28,7 @@
           class="header__icon-link"
           href="https://github.com/haeni82"
           target="_blank"
+          rel="noopener noreferrer"
           ><img
             class="header__icon"
             src="images/github.png"
@@ -37,6 +38,7 @@
           class="header__icon-link"
           href="https://twohaenifour.tistory.com/"
           target="_blank"
+          rel="noopener noreferrer"
           ><img
             class="header__icon"
             src="images/tistory.png"
@@ -49,10 +51,20 @@
     <div class="layout">
       <!-- 네비게이션 영역 -->
       <nav class="nav">
-        <a class="nav__item" href="#photos">포토덤프</a>
-        <a class="nav__item" href="#likes">좋아하는 것</a>
-        <a class="nav__item" href="#interests">내 관심사</a>
-        <a class="nav__item" href="#toWeb">웹왔니에게 한마디</a>
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a class="nav__item" href="#photos">포토덤프</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__item" href="#likes">좋아하는 것</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__item" href="#interests">내 관심사</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__item" href="#toWeb">웹왔니에게 한마디</a>
+          </li>
+        </ul>
       </nav>
 
       <!-- 메인 컨텐츠 영역 -->
@@ -64,42 +76,42 @@
             <div class="photos__item photos__item--1">
               <img
                 src="images/photoDump/photo1.jpg"
-                alt="사진 1"
+                alt="카이센동 사진"
                 class="photos__image"
               />
             </div>
             <div class="photos__item photos__item--2">
               <img
                 src="images/photoDump/photo2.jpg"
-                alt="사진 2"
+                alt="경주 오징어볶음 사진"
                 class="photos__image"
               />
             </div>
             <div class="photos__item photos__item--3">
               <img
                 src="images/photoDump/photo3.jpg"
-                alt="사진 3"
+                alt="프케멘 사진"
                 class="photos__image"
               />
             </div>
             <div class="photos__item photos__item--4">
               <img
                 src="images/photoDump/photo4.png"
-                alt="사진 4"
+                alt="경복궁 사진"
                 class="photos__image"
               />
             </div>
             <div class="photos__item photos__item--5">
               <img
                 src="images/photoDump/photo5.png"
-                alt="사진 5"
+                alt="후쿠오카 사진"
                 class="photos__image"
               />
             </div>
             <div class="photos__item photos__item--6">
               <img
                 src="images/photoDump/photo6.png"
-                alt="사진 6"
+                alt="페리 사진"
                 class="photos__image"
               />
             </div>
@@ -284,10 +296,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 솝트</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -303,10 +321,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 고양이</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -322,10 +346,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 프론트엔드</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -341,10 +371,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 술</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -360,10 +396,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 낮잠</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -379,10 +421,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 취업</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -398,10 +446,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 돈</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
@@ -417,10 +471,16 @@
               <div class="interests__body">
                 <p class="interests__name">✨ 드라마</p>
                 <div class="interests__btn-row">
-                  <button class="interests__btn interests__btn--like">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
                     좋아요
                   </button>
-                  <button class="interests__btn interests__btn--dislike">
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
                     싫어요
                   </button>
                 </div>
