@@ -1,0 +1,12 @@
+/* 레이아웃 */
+.layout {
+  display: flex;
+  margin-top: 64px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}

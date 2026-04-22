@@ -1,0 +1,51 @@
+/* toWeb 영역 */
+#toWeb {
+  padding: 2rem;
+}
+
+.toWeb__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111111;
+}
+
+.toWeb__card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.toWeb__subTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 1rem;
+}
+
+.toWeb__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toWeb__item {
+  font-size: 14px;
+  color: #444444;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toWeb__item::before {
+  content: "🖊️";
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.toWeb__item::after {
+  content: "💓";
+  font-size: 14px;
+  flex-shrink: 0;
+}

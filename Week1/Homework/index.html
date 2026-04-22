@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/profile.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>LETS SOPT WEB 38 1주차 과제 자기소개 페이지</title>
+  </head>
+  <body>
+    <!-- 헤더 영역 -->
+    <header class="header">
+      <div class="header__profile">
+        <img
+          class="header__avatar"
+          src="images/profile.png"
+          alt="프로필 사진"
+        />
+      </div>
+
+      <div class="header__info">
+        <h1 class="header__name">핸이의 블로그</h1>
+        <p class="header__title">Frontend Developer · SOPT 38기 웹파트</p>
+      </div>
+
+      <div class="header__social">
+        <a
+          class="header__icon-link"
+          href="https://github.com/haeni82"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img
+            class="header__icon"
+            src="images/github.png"
+            alt="깃허브 아이콘"
+        /></a>
+        <a
+          class="header__icon-link"
+          href="https://twohaenifour.tistory.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img
+            class="header__icon"
+            src="images/tistory.png"
+            alt="티스토리 아이콘"
+        /></a>
+      </div>
+    </header>
+
+    <!-- 중앙 영역 -->
+    <div class="layout">
+      <!-- 네비게이션 영역 -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a class="nav__item" href="#photos">포토덤프</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__item" href="#likes">좋아하는 것</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__item" href="#interests">내 관심사</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__item" href="#toWeb">웹왔니에게 한마디</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main class="main">
+        <!-- 포토덤프 영역 -->
+        <section id="photos">
+          <h2 class="photos__title">📸포토 덤프</h2>
+          <div class="photos__grid">
+            <div class="photos__item photos__item--1">
+              <img
+                src="images/photoDump/photo1.jpg"
+                alt="카이센동 사진"
+                class="photos__image"
+              />
+            </div>
+            <div class="photos__item photos__item--2">
+              <img
+                src="images/photoDump/photo2.jpg"
+                alt="경주 오징어볶음 사진"
+                class="photos__image"
+              />
+            </div>
+            <div class="photos__item photos__item--3">
+              <img
+                src="images/photoDump/photo3.jpg"
+                alt="프케멘 사진"
+                class="photos__image"
+              />
+            </div>
+            <div class="photos__item photos__item--4">
+              <img
+                src="images/photoDump/photo4.png"
+                alt="경복궁 사진"
+                class="photos__image"
+              />
+            </div>
+            <div class="photos__item photos__item--5">
+              <img
+                src="images/photoDump/photo5.png"
+                alt="후쿠오카 사진"
+                class="photos__image"
+              />
+            </div>
+            <div class="photos__item photos__item--6">
+              <img
+                src="images/photoDump/photo6.png"
+                alt="페리 사진"
+                class="photos__image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 좋아하는 것 영역 -->
+        <section id="likes">
+          <h2 class="likes__title">💓 좋아하는 것</h2>
+          <!-- 가로 스크롤 + 스크롤-스냅 구현 -->
+          <h3 class="likes__subTitle">드라마 (가로 스크롤)</h3>
+          <div class="likes__scroll-container">
+            <div class="likes__scroll-wrapper">
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama1.png"
+                  alt="드라마 1"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama2.png"
+                  alt="드라마 2"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama3.png"
+                  alt="드라마 3"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama4.png"
+                  alt="드라마 4"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama5.png"
+                  alt="드라마 5"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama6.png"
+                  alt="드라마 6"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama1.png"
+                  alt="드라마 1"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama2.png"
+                  alt="드라마 2"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/drama3.png"
+                  alt="드라마 3"
+                  class="likes__image"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- 무한 루프 배너 -->
+          <h3 class="likes__subTitle">고양이 (무한 루프 배너)</h3>
+          <div class="likes__banner-container">
+            <div class="likes__banner-wrapper">
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat1.jpg"
+                  alt="고양이1"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat2.jpg"
+                  alt="고양이2"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat3.jpg"
+                  alt="고양이3"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat4.jpg"
+                  alt="고양이4"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat5.jpg"
+                  alt="고양이5"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat6.jpg"
+                  alt="고양이6"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat1.jpg"
+                  alt="고양이1"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat2.jpg"
+                  alt="고양이2"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat3.jpg"
+                  alt="고양이3"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat4.jpg"
+                  alt="고양이4"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat5.jpg"
+                  alt="고양이5"
+                  class="likes__image"
+                />
+              </div>
+              <div class="likes__item">
+                <img
+                  src="images/likes/cat6.jpg"
+                  alt="고양이6"
+                  class="likes__image"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 내 관심사 영역 -->
+        <section id="interests">
+          <h2 class="interests__title">💙 내 관심사</h2>
+          <div class="interests__grid">
+            <div class="interests__card">
+              <img
+                src="images/interests/interests6.png"
+                alt="솝트"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 솝트</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/likes/cat1.jpg"
+                alt="고양이"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 고양이</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/interests/interests2.png"
+                alt="프론트엔드"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 프론트엔드</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/interests/interests1.png"
+                alt="술"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 술</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/interests/interests3.png"
+                alt="낮잠"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 낮잠</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/interests/interests4.png"
+                alt="취업"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 취업</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/interests/interests5.png"
+                alt="돈"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 돈</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests__card">
+              <img
+                src="images/likes/drama1.png"
+                alt="드라마"
+                class="interests__image"
+              />
+              <div class="interests__body">
+                <p class="interests__name">✨ 드라마</p>
+                <div class="interests__btn-row">
+                  <button
+                    class="interests__btn interests__btn--like"
+                    type="button"
+                  >
+                    좋아요
+                  </button>
+                  <button
+                    class="interests__btn interests__btn--dislike"
+                    type="button"
+                  >
+                    싫어요
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 웹왔니에게 한마디 영역 -->
+        <section id="toWeb">
+          <h2 class="toWeb__title">💌 to 웹왔니</h2>
+          <div class="toWeb__card">
+            <p class="toWeb__subTitle">To. 우리집에 웹왔니</p>
+            <ul class="toWeb__list">
+              <li class="toWeb__item">
+                웹왔니가 될 수 있어서 너무 너무 조아요
+              </li>
+              <li class="toWeb__item">
+                우리 모두 많은 추억 쌓고 멋진 프론트엔드 개발자가 되면 좋겠어용
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p class="footer__text">읽어주셔서 감사합니다 🥹🫶</p>
+    </footer>
+  </body>
+</html>
