@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import InfoCard from "@/components/InfoCard";
 
 // MainPage.tsx
@@ -21,6 +22,10 @@ const MainPage = () => {
           { label: "파트", value: "web" },
         ]}
       />
+      <div className="w-40">
+        <Button label="다음" />
+        <Button label="다음" disabled={true} />
+      </div>
     </div>
   );
 };
