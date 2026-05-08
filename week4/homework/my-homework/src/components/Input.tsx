@@ -28,7 +28,7 @@ const Input = ({
   return (
     <div className="flex flex-col gap-1 w-full">
       {label && (
-        <span className="text-md text-gray-700 font-bold">{label}</span>
+        <span className="mb-2 text-sm text-gray-700 font-bold">{label}</span>
       )}
       <div className="relative">
         <input

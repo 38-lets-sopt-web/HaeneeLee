@@ -4,7 +4,6 @@ import Input from "@/components/Input";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-// LoginPage.tsx
 const LoginPage = () => {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -49,6 +48,7 @@ const LoginPage = () => {
         <Button
           label="로그인"
           onClick={handleLogin}
+          type="button"
           disabled={!userId || !password} // 빈 문자열은 falsy라 !loginId면 비활성화
         />
         <Link to="/signup" className="text-blue-400 text-sm text-center">
