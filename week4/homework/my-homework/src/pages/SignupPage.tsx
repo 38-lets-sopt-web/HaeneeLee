@@ -2,6 +2,7 @@ import { postSignup } from "@/api/auth";
 import StepId from "@/features/auth/components/StepId";
 import StepInfo from "@/features/auth/components/StepInfo";
 import StepPassword from "@/features/auth/components/StepPassword";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,8 +32,16 @@ const SignupPage = () => {
       });
       alert(`${name}님 회원가입이 완료됐습니다!`);
       navigate("/");
-    } catch {
-      alert("회원가입에 실패했습니다.");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const message = error.response?.data?.message;
+        const code = error.response?.data?.code;
+        alert(message ?? "회원가입에 실패했습니다.");
+        // 중복된 아이디일경우 다시 ID를 입력할 수 있도록 이동
+        if (code === "AUTH_409_001") {
+          setStep(1);
+        }
+      }
     }
   };
 
