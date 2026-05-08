@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+/* Preflight 위에 덮어쓸 글로벌 스타일 */
+body {
+  color: var(--color-gray-900);
+  background-color: var(--color-surface);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button {
+  font-family: inherit;
+}
