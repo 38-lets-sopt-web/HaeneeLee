@@ -1,42 +1,60 @@
-import Button from "@/components/Button";
-import InfoCard from "@/components/InfoCard";
-import Input from "@/components/Input";
-import { useState } from "react";
+import { useMyInfo } from "@/features/member/hooks/useMyInfo";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
-// MainPage.tsx
 const MainPage = () => {
-  const [password, setPassword] = useState("");
-  const passwordError = "에러 발생";
+  const navigate = useNavigate();
+  const userId = Number(localStorage.getItem("userId"));
+  const { data } = useMyInfo(userId);
+
+  const handleLogout = () => {
+    localStorage.removeItem("userId");
+    navigate("/");
+  };
+
   return (
-    <div>
-      전체 페이지
-      <InfoCard
-        items={[
-          { label: "아이디", value: "dlgosl" },
-          { label: "파트", value: "web" },
-        ]}
-      />
-      <br />
-      <InfoCard
-        items={[
-          { label: "이름", value: "이해니" },
-          { label: "아이디", value: "dlgosl" },
-          { label: "이메일", value: "dlgosl@naver.com" },
-          { label: "나이", value: 25 },
-          { label: "파트", value: "web" },
-        ]}
-      />
-      <div className="w-40">
-        <Button label="다음" />
-        <Button label="다음" disabled={true} />
-      </div>
-      <Input
-        label="비밀번호"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        errorMessage={passwordError ?? undefined}
-      />
+    <div className="min-h-screen">
+      <header className="flex items-center justify-between px-8 py-4 bg-primary shadow-sm">
+        <div className="flex flex-col gap-1">
+          <h3 className="text-center text-white font-extrabold">
+            SOPT MEMBERS
+          </h3>
+          <span className="text-white text-sm">
+            안녕하세요. {data.data.name}님!
+          </span>
+        </div>
+        <nav className="flex items-center gap-6">
+          <NavLink
+            to="/mypage"
+            end // members도 /mypage의 하위경로라서 active로 인식됨. 따라서 end props가 있어야함
+            className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold text-sm"
+                : "text-gray-700 text-sm hover:text-gray-300 transition-colors"
+            }
+          >
+            내 정보
+          </NavLink>
+          <NavLink
+            to="/mypage/members"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold text-sm"
+                : "text-gray-500 text-sm hover:text-gray-300 transition-colors"
+            }
+          >
+            회원 조회
+          </NavLink>
+          <button
+            onClick={handleLogout}
+            className="text-gray-500 text-sm hover:text-gray-300 transition-colors"
+          >
+            로그아웃
+          </button>
+        </nav>
+      </header>
+      <main className="p-8">
+        <Outlet />
+      </main>
     </div>
   );
 };
