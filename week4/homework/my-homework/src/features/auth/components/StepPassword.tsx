@@ -20,6 +20,7 @@ const StepPassword = ({
 }: StepIdProps) => {
   const passwordError = validatePassword(password);
   const confirmError = validateConfirmPassword(password, confirmPassword);
+  // input 에 포커스되었을 때만 에러 메시지 출력
   const [passwordFocused, setPasswordFocused] = useState(false);
   const [confirmFocused, setConfirmFocused] = useState(false);
 
@@ -42,9 +43,7 @@ const StepPassword = ({
           setPassword(e.target.value);
           setPasswordFocused(true);
         }}
-        errorMessage={
-          passwordFocused ? (passwordError ?? undefined) : undefined
-        }
+        errorMessage={(passwordFocused && passwordError) || undefined}
       />
       <Input
         type="password"
@@ -55,7 +54,7 @@ const StepPassword = ({
           setConfirmPassword(e.target.value);
           setConfirmFocused(true);
         }}
-        errorMessage={confirmFocused ? (confirmError ?? undefined) : undefined}
+        errorMessage={(confirmFocused && confirmError) || undefined}
       />
     </SignupLayout>
   );

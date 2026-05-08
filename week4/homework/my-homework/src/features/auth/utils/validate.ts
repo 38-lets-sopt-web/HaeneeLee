@@ -1,4 +1,4 @@
-// 아이디 입력값 검증
+// 아이디 유효성 검사
 export const validateUserId = (userId: string) => {
   if (userId.length > 20) return "아이디는 20자 이내로 입력해주세요";
   return null;
@@ -22,5 +22,24 @@ export const validateConfirmPassword = (
   confirmPassword: string,
 ) => {
   if (password !== confirmPassword) return "비밀번호가 일치하지 않아요";
+  return null;
+};
+
+// 이름 유효성 검사
+export const validateName = (name: string) => {
+  if (name.length >= 10) return "이름은 10자 미만으로 입력해주세요";
+  return null;
+};
+
+// 이메일 유효성 검사
+export const validateEmail = (email: string) => {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    return "이메일 형식이 올바르지 않아요";
+  return null;
+};
+
+// 나이 유효성 검사
+export const validateAge = (age: string) => {
+  if (isNaN(Number(age))) return "나이는 숫자로 입력해주세요";
   return null;
 };

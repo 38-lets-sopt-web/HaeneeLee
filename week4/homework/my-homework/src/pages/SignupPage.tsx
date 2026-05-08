@@ -1,6 +1,9 @@
+import { postSignup } from "@/api/auth";
 import StepId from "@/features/auth/components/StepId";
+import StepInfo from "@/features/auth/components/StepInfo";
 import StepPassword from "@/features/auth/components/StepPassword";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [step, setStep] = useState(1);
@@ -9,10 +12,29 @@ const SignupPage = () => {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [age, setAge] = useState("");
-  // const [part, setPart] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [part, setPart] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSignup = async () => {
+    try {
+      await postSignup({
+        loginId: userId,
+        password,
+        name,
+        email,
+        age: Number(age),
+        part,
+      });
+      alert(`${name}님 회원가입이 완료됐습니다!`);
+      navigate("/");
+    } catch {
+      alert("회원가입에 실패했습니다.");
+    }
+  };
 
   // 회원가입 3단계 조건부 렌더링
   return (
@@ -33,7 +55,7 @@ const SignupPage = () => {
           onNext={() => setStep(3)}
         />
       )}
-      {/* {step === 3 && (
+      {step === 3 && (
         <StepInfo
           name={name}
           setName={setName}
@@ -43,8 +65,9 @@ const SignupPage = () => {
           setAge={setAge}
           part={part}
           setPart={setPart}
+          onSubmit={handleSignup}
         />
-      )} */}
+      )}
     </div>
   );
 };

@@ -38,6 +38,7 @@ const Input = ({
           placeholder={placeholder}
           className={cn(
             "w-full px-4 py-3 rounded-lg border outline-none transition-colors",
+            "placeholder:text-gray-400 placeholder:text-sm",
             "border-gray-300 focus:border-blue-400",
             errorMessage && "border-red-300 focus:border-red-600",
           )}
