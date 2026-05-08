@@ -1,4 +1,3 @@
-// components/InfoCard.tsx
 interface InfoCardProps {
   items: {
     label: string;

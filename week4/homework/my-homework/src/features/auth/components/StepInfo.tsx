@@ -46,7 +46,6 @@ const StepInfo = ({
   return (
     <SignupLayout
       buttonLabel="회원가입"
-      buttonType="submit"
       onButtonClick={onSubmit}
       buttonDisabled={isDisabled}
     >
