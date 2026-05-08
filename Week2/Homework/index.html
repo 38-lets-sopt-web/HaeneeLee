@@ -10,19 +10,25 @@
     <!-- 헤더 영역 -->
     <header class="header">
       <div class="header__left">
-        <span class="header__icon" id="refreshBtn">🌸</span>
+        <button
+          class="header__icon"
+          id="refreshBtn"
+          aria-label="페이지 새로고침"
+        >
+          🌸
+        </button>
       </div>
       <div class="header__center">해니의 가계부</div>
       <div class="header__right">SOPT 38th WEB</div>
     </header>
 
     <!-- 필터링 영역 -->
-    <div class="container">
+    <main class="container">
       <section class="card" id="filterSection">
         <h2 class="filter__title">검색 필터</h2>
-        <div class="filter__grid">
+        <form class="filter__grid" id="filterForm">
           <div class="filter__item">
-            <label class="filter__label">제목</label>
+            <label class="filter__label" for="filterTitle">제목</label>
             <input
               class="filter__input"
               id="filterTitle"
@@ -38,6 +44,7 @@
               <option value="지출">지출</option>
             </select>
           </div>
+
           <div class="filter__item">
             <label class="filter__label">카테고리</label>
             <select class="filter__input" id="filterCategory">
@@ -50,6 +57,7 @@
               <option value="기타">기타</option>
             </select>
           </div>
+
           <div class="filter__item">
             <label class="filter__label">결제수단</label>
             <select class="filter__input" id="filterPayment">
@@ -61,15 +69,23 @@
             </select>
           </div>
 
-          <button class="filter__btn filter__btn--apply" id="applyFilterBtn">
+          <button
+            type="button"
+            class="filter__btn filter__btn--apply"
+            id="applyFilterBtn"
+          >
             적용
           </button>
-          <button class="filter__btn filter__btn--reset" id="resetFilterBtn">
+          <button
+            type="reset"
+            class="filter__btn filter__btn--reset"
+            id="resetFilterBtn"
+          >
             초기화
           </button>
-        </div>
+        </form>
       </section>
-    </div>
+    </main>
 
     <!-- 표 영역 -->
     <div class="container">
@@ -95,103 +111,139 @@
         <table class="table">
           <thead>
             <tr>
-              <th><input type="checkbox" id="checkAll" /></th>
-              <th>제목</th>
-              <th>금액</th>
-              <th>날짜</th>
-              <th>카테고리</th>
-              <th>결제수단</th>
+              <th scope="col"><input type="checkbox" id="checkAll" /></th>
+              <th scope="col">제목</th>
+              <th scope="col">금액</th>
+              <th scope="col">날짜</th>
+              <th scope="col">카테고리</th>
+              <th scope="col">결제수단</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
-          <tfoot id="tableFoot"></tfoot>
+          <tfoot id="tableFoot">
+            <tr>
+              <td colspan="2"><strong>total</strong></td>
+              <td id="totalAmountCell" colspan="4">
+                <strong id="totalAmountText">0</strong>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </section>
     </div>
 
-    <!-- 추가 모달 영역 -->
-    <div class="modal-backdrop" id="addModalBackdrop">
-      <div class="modal">
-        <div class="modal__header">
-          <h2 class="modal__title">내역 추가</h2>
-          <button class="modal__close" id="addModalClose">✕</button>
+    <!-- 추가 모달 영역 (dialog 태그) -->
+    <dialog class="modal" id="addModal">
+      <div class="modal__header">
+        <h2 class="modal__title">내역 추가</h2>
+        <button class="modal__close" id="addModalClose" aria-label="모달 닫기">
+          ✕
+        </button>
+      </div>
+
+      <form class="modal__body" id="addModalForm">
+        <div class="modal__field">
+          <label class="modal__label" for="addTitle">제목</label>
+          <input
+            class="modal__input"
+            id="addTitle"
+            placeholder="제목을 입력하세요"
+            required
+          />
         </div>
 
-        <div class="modal__body">
+        <div class="modal__row">
           <div class="modal__field">
-            <label class="modal__label">제목</label>
+            <label class="modal__label" for="addType">유형</label>
+            <select class="modal__input" id="addType" required>
+              <option value="지출">지출 (-)</option>
+              <option value="수입">수입 (+)</option>
+            </select>
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="addAmount">금액 (숫자만)</label>
             <input
               class="modal__input"
-              id="addTitle"
-              placeholder="제목을 입력하세요"
+              id="addAmount"
+              type="number"
+              min="0"
+              placeholder="금액을 입력하세요"
+              required
             />
           </div>
+        </div>
 
-          <div class="modal__row">
-            <div class="modal__field">
-              <label class="modal__label">유형</label>
-              <select class="modal__input" id="addType">
-                <option value="지출">지출 (-)</option>
-                <option value="수입">수입 (+)</option>
-              </select>
-            </div>
-            <div class="modal__field">
-              <label class="modal__label">금액 (숫자만)</label>
-              <input
-                class="modal__input"
-                id="addAmount"
-                type="number"
-                min="0"
-                placeholder="금액을 입력하세요"
-              />
-            </div>
-          </div>
+        <div class="modal__field">
+          <label class="modal__label" for="addDate">날짜</label>
+          <input class="modal__input" id="addDate" type="date" required />
+        </div>
 
+        <div class="modal__row">
           <div class="modal__field">
-            <label class="modal__label">날짜</label>
-            <input class="modal__input" id="addDate" type="date" />
+            <label class="modal__label" for="addCategory">카테고리</label>
+            <select class="modal__input" id="addCategory" required>
+              <option value="">선택</option>
+              <option value="식비">식비</option>
+              <option value="교통">교통</option>
+              <option value="문화">문화</option>
+              <option value="생활">생활</option>
+              <option value="월급">월급</option>
+              <option value="기타">기타</option>
+            </select>
           </div>
-
-          <div class="modal__row">
-            <div class="modal__field">
-              <label class="modal__label">카테고리</label>
-              <select class="modal__input" id="addCategory">
-                <option value="">선택</option>
-                <option value="식비">식비</option>
-                <option value="교통">교통</option>
-                <option value="문화">문화</option>
-                <option value="생활">생활</option>
-                <option value="월급">월급</option>
-                <option value="기타">기타</option>
-              </select>
-            </div>
-            <div class="modal__field">
-              <label class="modal__label">결제수단</label>
-              <select class="modal__input" id="addPayment">
-                <option value="">선택</option>
-                <option value="현금">현금</option>
-                <option value="신용카드">신용카드</option>
-                <option value="체크카드">체크카드</option>
-                <option value="기타">기타</option>
-              </select>
-            </div>
+          <div class="modal__field">
+            <label class="modal__label" for="addPayment">결제수단</label>
+            <select class="modal__input" id="addPayment" required>
+              <option value="">선택</option>
+              <option value="현금">현금</option>
+              <option value="신용카드">신용카드</option>
+              <option value="체크카드">체크카드</option>
+              <option value="기타">기타</option>
+            </select>
           </div>
+        </div>
 
-          <button class="modal__submit" id="addConfirmBtn">추가</button>
+        <button type="button" class="modal__submit" id="addConfirmBtn">
+          추가
+        </button>
+      </form>
+    </dialog>
+
+    <!-- 세부 정보 모달 영역 (dialog 태그) -->
+    <dialog class="modal" id="detailModal">
+      <div class="modal__header">
+        <h2 class="modal__title">항목 상세</h2>
+        <button
+          class="modal__close"
+          id="detailModalClose"
+          aria-label="모달 닫기"
+        >
+          ✕
+        </button>
+      </div>
+      <div class="modal__body" id="detailModalBody">
+        <div class="detail__row">
+          <span class="detail__label">제목</span>
+          <span id="detailTitle"></span>
+        </div>
+        <div class="detail__row">
+          <span class="detail__label">금액</span>
+          <span id="detailAmount"></span>
+        </div>
+        <div class="detail__row">
+          <span class="detail__label">날짜</span>
+          <span id="detailDate"></span>
+        </div>
+        <div class="detail__row">
+          <span class="detail__label">카테고리</span>
+          <span id="detailCategory"></span>
+        </div>
+        <div class="detail__row">
+          <span class="detail__label">결제수단</span>
+          <span id="detailPayment"></span>
         </div>
       </div>
-    </div>
-
-    <!-- 세부 정보 모달 영역 -->
-    <div class="modal-backdrop" id="detailModalBackdrop">
-      <div class="modal">
-        <div class="modal__header">
-          <h2 class="modal__title">항목 상세</h2>
-          <button class="modal__close" id="detailModalClose">✕</button>
-        </div>
-        <div class="modal__body" id="detailModalBody"></div>
-      </div>
-    </div>
+    </dialog>
 
     <script type="module" src="js/main.js"></script>
   </body>

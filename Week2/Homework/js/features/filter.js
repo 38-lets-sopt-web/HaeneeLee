@@ -1,12 +1,15 @@
 export function initFilter(onApply) {
+  const filterForm = document.getElementById("filterForm");
+
   // 적용
   document.getElementById("applyFilterBtn").addEventListener("click", () => {
     onApply(getFilterValues());
   });
 
   // 초기화
+  // form.reset()으로 한 번에 초기화
   document.getElementById("resetFilterBtn").addEventListener("click", () => {
-    resetFilterFields();
+    filterForm.reset();
     onApply(getFilterValues());
   });
 }
@@ -19,14 +22,6 @@ export function getFilterValues() {
     category: document.getElementById("filterCategory").value,
     payment: document.getElementById("filterPayment").value,
   };
-}
-
-// 필터링 초기화
-export function resetFilterFields() {
-  document.getElementById("filterTitle").value = "";
-  document.getElementById("filterType").value = "전체";
-  document.getElementById("filterCategory").value = "전체";
-  document.getElementById("filterPayment").value = "전체";
 }
 
 // 필터 적용

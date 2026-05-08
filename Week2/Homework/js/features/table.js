@@ -31,29 +31,37 @@ function renderBody(data) {
 }
 
 // tfoot 렌더링
-// 필터링 된 데이터의 합계 계산 후 출력
+// 구조는 HTML에 고정, 숫자와 클래스만 업데이트 (불필요한 DOM 재생성 방지)
 function renderFoot(data) {
   const total = data.reduce((sum, item) => sum + item.amount, 0);
-  const tfoot = document.getElementById("tableFoot");
-  tfoot.innerHTML = `
-    <tr>
-      <td colspan="2"><strong>total</strong></td>
-      <td class="${total >= 0 ? "amount--positive" : "amount--negative"}" colspan="4">
-        <strong>${formatAmount(total)}</strong>
-      </td>
-    </tr>
-  `;
+
+  document.getElementById("totalAmountText").textContent = formatAmount(total);
+  document.getElementById("totalAmountCell").className =
+    total >= 0 ? "amount--positive" : "amount--negative";
 }
 
 // 테이블 이벤트 등록
 // onTitleClick: 제목 클릭 시 호출됨 => 세부 모달 열기
 // onRender: 삭제/정렬 변경 후 테이블 다시 렌더링
 export function initTable(onTitleClick, onRender) {
-  // 전체 체크박스
+  // 전체 체크박스 → 개별 체크박스 전체 동기화
   document.getElementById("checkAll").addEventListener("change", (e) => {
     document
       .querySelectorAll(".row-check")
       .forEach((cb) => (cb.checked = e.target.checked));
+  });
+
+  // 개별 체크박스 → 전체 체크박스 동기화
+  // 모두 체크되면 전체 체크박스도 체크, 하나라도 해제되면 전체 체크박스 해제
+  document.getElementById("tableBody").addEventListener("change", (e) => {
+    if (e.target.classList.contains("row-check")) {
+      const checkboxes = document.querySelectorAll(".row-check");
+      const allCount = checkboxes.length;
+      const checkedCount =
+        document.querySelectorAll(".row-check:checked").length;
+      document.getElementById("checkAll").checked =
+        allCount > 0 && allCount === checkedCount;
+    }
   });
 
   // 선택 삭제
