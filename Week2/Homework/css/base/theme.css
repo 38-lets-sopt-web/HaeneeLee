@@ -1,0 +1,40 @@
+:root {
+  --color-header-bg: #fff194;
+  --color-bg: #f4f4f4;
+  --color-border: #e0e0e0;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-primary: #1a1a1a;
+  --color-primary-hover: #333333;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --spacing-xl: 32px;
+  --spacing-lg: 24px;
+  --spacing-md: 16px;
+  --spacing-sm: 8px;
+  --spacing-xs: 4px;
+
+  --font-xl: 23px;
+  --font-lg: 18px;
+  --font-md: 15px;
+  --font-sm: 13px;
+}
+
+.container {
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}

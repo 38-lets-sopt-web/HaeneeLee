@@ -1,0 +1,39 @@
+.header {
+  background-color: var(--color-header-bg);
+  color: #000;
+  width: 100%;
+  height: 60px;
+  padding: 0 var(--spacing-xl);
+  display: flex;
+  align-items: center;
+}
+
+.header__left,
+.header__center,
+.header__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header__center {
+  justify-content: center;
+  font-size: var(--font-lg);
+  font-weight: 600;
+}
+
+.header__right {
+  justify-content: flex-end;
+  font-size: var(--font-sm);
+  color: #000;
+}
+
+.header__icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.header__icon:hover {
+  opacity: 0.7;
+}

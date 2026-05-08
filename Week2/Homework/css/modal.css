@@ -1,0 +1,116 @@
+/* dialog 기본 스타일 초기화 및 모달 스타일 */
+.modal {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+/* dialog가 열릴 때 뒤 배경 (기존 .modal-backdrop 역할) */
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.modal__title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+}
+
+.modal__close {
+  font-size: 20px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+}
+
+.modal__close:hover {
+  color: var(--color-text-secondary);
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.modal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.modal__label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.modal__input {
+  width: 100%;
+  padding: 10px var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+  font-family: inherit;
+  background-color: #ffffff;
+  color: var(--color-text-primary);
+}
+
+.modal__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.modal__submit {
+  margin-top: var(--spacing-sm);
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 700;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__submit:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.detail__row {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-md);
+}
+
+.detail__label {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  min-width: 80px;
+}
