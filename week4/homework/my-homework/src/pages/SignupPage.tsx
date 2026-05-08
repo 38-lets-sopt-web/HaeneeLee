@@ -1,4 +1,5 @@
 import StepId from "@/features/auth/components/StepId";
+import StepPassword from "@/features/auth/components/StepPassword";
 import { useState } from "react";
 
 const SignupPage = () => {
@@ -6,8 +7,8 @@ const SignupPage = () => {
 
   // 각 단계에서 필요한 state들
   const [userId, setUserId] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   // const [name, setName] = useState("");
   // const [email, setEmail] = useState("");
   // const [age, setAge] = useState("");
@@ -23,7 +24,7 @@ const SignupPage = () => {
           onNext={() => setStep(2)}
         />
       )}
-      {/* {step === 2 && (
+      {step === 2 && (
         <StepPassword
           password={password}
           setPassword={setPassword}
@@ -32,7 +33,7 @@ const SignupPage = () => {
           onNext={() => setStep(3)}
         />
       )}
-      {step === 3 && (
+      {/* {step === 3 && (
         <StepInfo
           name={name}
           setName={setName}

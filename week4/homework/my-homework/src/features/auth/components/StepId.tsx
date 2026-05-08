@@ -4,11 +4,10 @@ import { validateUserId } from "../utils/validate";
 
 interface StepIdProps {
   userId: string;
-  setUserId: (value: string) => void;
+  setUserId: React.Dispatch<React.SetStateAction<string>>;
   onNext: () => void;
 }
 
-// StepId.tsx
 const StepId = ({ userId, setUserId, onNext }: StepIdProps) => {
   const idError = validateUserId(userId);
 

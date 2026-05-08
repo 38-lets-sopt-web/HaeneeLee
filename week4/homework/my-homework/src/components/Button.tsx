@@ -13,7 +13,7 @@ const Button = ({ label, onClick, disabled, type = "button" }: ButtonProps) => {
       disabled={disabled}
       className="w-full bg-cyan-400 rounded-md p-3 
   hover:bg-cyan-500 transition-colors 
-  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-cyan-400"
+  disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-cyan-400"
     >
       <span className="text-white font-bold">{label}</span>
     </button>
